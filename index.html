@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet"  href="jsworld.css" type="text/css">
+<link rel="stylesheet" href="responsive.css" type="text/css">
+<title>Trust Group</title>
+
+</head>
+<body>
+  <div id="main">
+  <header>
+    <h1 id="first"> <img src="img/trust.png" width="50px" height="40px"/> Trust<span style="color:red">Saving</span> Group</h1>
+    <nav>
+      <ul>
+        <li class="topinline"><a href="index.html">Home</a></li>
+        <li class="topinline"><a href="schoollife.html">About Us</a></li>
+        <li class="topinline"><a href="hometown.html">Vision</a></li>
+        <li class="topinline"><a href="timetable.html">Mission</a></li>
+        <li class="topinline"><a href="Japanese.html">Membership Enquiry</a></li>
+        <li class="topinline"><a href="jsworld.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+    <div class="main-body">
+      <div class="navigation-bar">
+        <ul>
+          <li class="topinline"><a href="index.html">Home</a></li>
+          <li class="topinline"><a href="schoollife.html">About Us</a></li>
+          <li class="topinline"><a href="hometown.html">Vission</a></li>
+          <li class="topinline"><a href="timetable.html">Mission</a></li>
+          <li class="topinline"><a href="Japanese.html">Membership Enquiry</a></li>
+          <li class="topinline"><a href="jsworld.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="form1">
+        <p class="font">Please input your name</p>
+        <form name="form1" method="post">
+					<input class="text" placeholder="Type name here" type="text" name="username" size="15">
+					<input class="button1" type="button" value="click the button" onclick="alert('Hello, Mr/Ms '+document.form1.username.value)"/>
+				</form>
+      </div>
+      <div class="form1">
+				<form name="form2" method="post">
+					<p class="font">Please select your gender</p>
+					<input type="radio" name="gender" value="Male"/>Male
+					<input type="radio" name="gender" value="Female"/>Female
+					<input class="button1" type="button" value="click the button" onclick="chooseGender()"/>
+				</form>
+      </div>
+      <div class="form1">
+				<form name="form3" method="post">
+					<p class="font"> Please select language</p>
+					<input type="checkbox" name="language" value="English"/>English
+					<input type="checkbox" name="language" value="Hindi"/>Hindi
+          <input type="checkbox" name="language" value="Nepalese">Nepalese
+					<input type="checkbox" name="language" value="Others"/>Others
+					<input class="button1" type="button" value="click the button" onclick="chooseLanguage()"/>
+				</form>
+      </div>
+      <div class="form1">
+				<form name="form4" method="post">
+					<select class="multiple-opt" name="concentrations">
+						<option value="Singing"/>Singing
+						<option value="Dancing"/>Dancing
+						<option value="Playing"/>Playing
+						<option value="Swimming"/> Swimming
+						<option value="Travelling"/> Travelling
+						<option value="Watching Moview"/> Watching Movies
+						<option value="Acting"/>Acting
+					</select>
+					<input class="button1" type="button" value="choose hobby" onclick="chooseConcentrations()"/>
+        </form>
+      </div>
+      <div class="form1">
+
+      </div>
+      <div class="form1">
+
+        <form name="form5" action="5_6.html" method="get">
+
+      		<select name="instruments" multiple="multiple">
+      	<option value="guitar">guitar</option>
+      	<option value="drums" selected>drums</option>
+      	<option value="keyboard">keyboard</option>
+      	<option value="bass" selected>bass</option>
+         </select>
+      	 <input class="button1" type="button" value="choose the instrument" onclick="chooseInstrument()"/>
+      	 <input class="button1" type="reset" value="reset" />
+       </form>
+     </div>
+<div class="form1">
+<p class="font"> Mouseover and Picture change</p>
+	<img id="s2" onmouseover="this.src='img/trust6.jpg'" onmouseout="this.src='img/trust6.jpg'" onclick="this.src='img/trust7.jpg'" src="img/trust8.jpg" width="150px" height="150px"/><br/>
+
+</div>
+<div class="form1">
+<button onclick="document.getElementById('image').src='img/trust1.jpg'">Sukute Beach</button>
+<button onclick="document.getElementById('image').src='img/trust13.jpg'">Bandipur</button>
+<button onclick="document.getElementById('image').src='img/trust3.jpg'">Dolalghat</button>
+<button onclick="document.getElementById('image').src='img/trust9.jpg'">Siddha Gufa</button></br>
+<img id="image" src="img/trust1.jpg"/>
+</div>
+
+
+      </div>
+    </div>
+    <footer> &copy; Trust Saving Group 2020</footer>
+  </div>
+<script>
+var w = null;
+// Open a window
+
+function chooseLanguage(form3){
+	for(var i=0; i<document.form3.language.length;i++){
+		if(document.form3.language[i].checked){
+			alert(document.form3.language[i].value);
+		}
+	}
+}
+
+function chooseConcentrations(form4){
+	for(var i=0; i<document.form4.concentrations.options.length;i++){
+    if(document.form4.concentrations.options[i].selected){
+      alert(document.form4.concentrations.options[i].text);
+      return;
+    }
+  }
+}
+
+function chooseGender(form2){
+	for(var i=0;i<document.form2.gender.length;i++){
+		if(document.form2.gender[i].checked){
+			alert(document.form2.gender[i].value);
+		}
+	}
+}
+
+function chooseInstrument(form5){
+	var choice="";
+	for(var i=0; i<document.form5.instruments.options.length;i++){
+		if(document.form5.instruments.options[i].selected){
+			if(choice!=""){
+				choice=choice+",";
+			}
+			choice=choice+document.form5.instruments.options[i].text;
+		}
+	}
+	alert(choice);
+}
+
+
+
+</script>
+
+</body>
+</html>
